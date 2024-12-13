@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.center-content {
+  display: flex;
+  /* Habilita el modo flexbox */
+  flex-direction: column;
+  /* Alinea los elementos en columna */
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  /* height: 100vh; */
+  /* Ocupa todo el alto de la página */
+  text-align: center;
+  /* Asegura que el texto esté centrado */
+}
+
+.fondo {
+  background-color: #282c34;
+  min-height: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
