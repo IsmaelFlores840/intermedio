@@ -3,7 +3,8 @@ import ruleta from "./ruleta.png";
 import React, { useState } from "react";
 import "./App.css";
 import Intermedio from "./Intermedio";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row, Form } from "react-bootstrap";
+import Footer from "./Footer";
 
 import {
   BrowserRouter as Router,
@@ -37,14 +38,15 @@ function App() {
           alt="logo"
           // style={{ paddingBottom: "20px" }}
         />
-        <input
+        {/* <input
           type="text"
           onChange={OnChangeText}
           placeholder="Ingrese un valor"
-        ></input>
-        {texto}
+        ></input> */}
+        {/* {texto} */}
         <button onClick={redirectIntermedio}>Intermedo</button>
       </header>
+      <Footer />
     </Container>
   );
 }

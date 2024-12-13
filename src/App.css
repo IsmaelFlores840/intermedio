@@ -75,3 +75,38 @@
   /* Ocupa todo el alto de la ventana */
   margin: 0;
 }
+
+.banner {
+  width: 100%;/* Ocupa todo el ancho */
+  /*background-color: #333; Fondo del banner (puedes cambiar el color) */
+    background-color: rgba(0, 0, 0, 0.7);
+  color: white;/* Color del texto */
+  padding: 10px;/* Espaciado interno */
+  /*text-align: left; /*Centra el contenido horizontalmente */
+  position: absolute;/* Posiciona el banner arriba sin alterar el flujo */
+  top: 0;/* Ubica el banner en la parte superior */
+}
+
+.volver{
+  background: rgb(143, 25, 25);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(143, 25, 25);
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+  }
+
+.volver:hover {
+      border: 2px solid #e9ec2d;
+      background: #e9ec2d;
+}
+
+.letra-footer {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 0;
+}
