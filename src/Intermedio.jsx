@@ -15,11 +15,11 @@ function Intermedio() {
   };
 
   return (
-    <div className="center-content fondo">
+    <Container className=" center-content fondo intermedio">
       <h1>Bienvenido a Intermedio</h1>
       <p>¡Este es el juego de Intermedio!</p>
       <button onClick={goBack}>Volver</button>
-    </div>
+    </Container>
   );
 }
 

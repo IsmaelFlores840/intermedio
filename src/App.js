@@ -37,15 +37,6 @@ function App() {
           alt="logo"
           // style={{ paddingBottom: "20px" }}
         />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ paddingTop: "20px" }}
-        >
-          Intermedio
-        </a>
         <input
           type="text"
           onChange={OnChangeText}
