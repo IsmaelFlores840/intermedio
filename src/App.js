@@ -17,10 +17,10 @@ function App() {
   const [texto, setTexto] = useState("");
   const navigate = useNavigate(); // Hook para programar redirecciones
 
-  const OnChangeText = (event) => {
-    // funcion de flecha, es la mas común
-    setTexto(event.target.value);
-  };
+  // const OnChangeText = (event) => {
+  //   // funcion de flecha, es la mas común
+  //   setTexto(event.target.value);
+  // };
   const redirectIntermedio = () => {
     navigate("/intermedio"); // Redirige al componente Intermedio
   };
@@ -44,7 +44,9 @@ function App() {
           placeholder="Ingrese un valor"
         ></input> */}
         {/* {texto} */}
-        <button onClick={redirectIntermedio}>Intermedo</button>
+        <Row style={{ padding: "20px" }}>
+          <button onClick={redirectIntermedio}>Intermedo</button>
+        </Row>
       </header>
       <Footer />
     </Container>
