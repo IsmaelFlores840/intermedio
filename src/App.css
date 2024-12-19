@@ -99,3 +99,66 @@
   font-size: larger;
   margin-bottom: 0;
 }
+
+.letrero {
+  width: 80%;
+  /* Ajusta el ancho como prefieras */
+  height: 200px;
+  /* Ajusta la altura como prefieras */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Oscuro con opacidad del 70% */
+  border-radius: 20px;
+  /* Esquinas curvas */
+  display: flex;
+  /* Para centrar el contenido dentro del letrero */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  color: white;
+  /* Color del texto */
+  font-size: 200%;
+  /* Tamaño de fuente */
+  text-align: center;
+  /* Centrado del texto */
+  margin: 0 auto;
+  /* Centrar horizontalmente en la página */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  /* Sombra sutil */
+}
+
+
+/* agregado de pag random*/
+
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #7e97b8;
+  /* background-color: #e0e8ef; */
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: rgba(255, 255, 255, 0.333);
+  border-radius: 30px 30px 30px 30px;
+  padding: 16px 24px 16px 28px;
+  transform: translate(0px, 0px) rotate(0deg);
+  transition: 0.2s;
+  /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%); */
+}
+
+button:hover {
+  color: #516d91;
+  background-color: #E5EDF5;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+button:active {
+  box-shadow: none;
+}

@@ -3,7 +3,7 @@ import ruleta from "./ruleta.png";
 import React, { useState } from "react";
 import "./App.css";
 import Intermedio from "./Intermedio";
-import { Card, Col, Container, Row, Form } from "react-bootstrap";
+import { Card, Col, Container, Row, Form, Button } from "react-bootstrap";
 import Footer from "./Footer";
 
 import {
@@ -45,7 +45,9 @@ function App() {
         ></input> */}
         {/* {texto} */}
         <Row style={{ padding: "20px" }}>
-          <button onClick={redirectIntermedio}>Intermedo</button>
+          <Button className="llili" onClick={redirectIntermedio}>
+            Intermedo
+          </Button>
         </Row>
       </header>
       <Footer />
