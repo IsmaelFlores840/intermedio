@@ -1,8 +1,8 @@
 // import logo from "./logo.svg";
-import ruleta from "./ruleta.png";
+import ruleta from "./Fondos/ruleta.png";
 import React, { useState } from "react";
 import "./App.css";
-import Intermedio from "./Intermedio";
+import Intermedio from "./Intermedio/Intermedio";
 import { Card, Col, Container, Row, Form, Button } from "react-bootstrap";
 import Footer from "./Footer";
 
