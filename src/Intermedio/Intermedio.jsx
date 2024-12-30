@@ -9,12 +9,13 @@ function Intermedio() {
   const navigate = useNavigate(); // Creamos una instancia del hook
 
   const [saldo, setSaldo] = useState(2000);
+  const [apuesta, setApuesta] = useState(0);
   const [resultado, setResultado] = useState("");
   const [numeroAleatorio, setNumeroAleatorio] = useState(0);
-  const [carta1, setCarta1] = useState(0);
-  const [carta2, setCarta2] = useState(0);
   const [estado, setEstado] = useState(true);
-
+  useEffect(() => {
+    console.log(apuesta);
+  }, [apuesta]);
   const goBack = () => {
     setResultado("");
     navigate("/"); // Redirige a la página de inicio
@@ -25,13 +26,40 @@ function Intermedio() {
     setNumeroAleatorio(numero); // Actualiza el estado
   };
 
-  const actualizarSaldo = (nuevoSaldo) => {
-    setSaldo(nuevoSaldo);
+  const apuestaInicial = (apuesta) => {
+    setApuesta(apuesta);
+    setEstado(false);
   };
 
   return (
     <Container className=" center-content fondo intermedio">
-      <Row className="banner" style={{ textAlign: "left", paddingLeft: "10%" }}>
+      <Row
+        className="banner"
+        style={{
+          textAlign: "left",
+          paddingLeft: "10%",
+          display: "flex",
+          justifyItems: "center",
+          textJustify: "center",
+          // justifyContent: "center",
+        }}
+      >
+        <button onClick={goBack}>
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="css-i6dzq1"
+          >
+            <polygon points="15 2, 15 22, 5 12"></polygon>
+          </svg>{" "}
+          Volver
+        </button>{" "}
         <Form.Label> Saldo: ${saldo} </Form.Label>
       </Row>
       <h1 className="letrero">
@@ -42,32 +70,16 @@ function Intermedio() {
       {/* <Row>
         {carta1} {carta2}
       </Row> */}
-      {numeroAleatorio}
+      {/* {numeroAleatorio} */}
 
       {estado ? (
         <InicioIntermedio
           saldo={saldo}
-          apuesta={(saldo) => actualizarSaldo(saldo)}
+          apuesta={(saldo) => apuestaInicial(saldo)}
         />
       ) : (
         <JuegoIntermedio />
       )}
-      <button onClick={goBack}>
-        <svg
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          stroke="currentColor"
-          stroke-width="2"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="css-i6dzq1"
-        >
-          <polygon points="15 2, 15 22, 5 12"></polygon>
-        </svg>{" "}
-        Volver
-      </button>
     </Container>
   );
 }

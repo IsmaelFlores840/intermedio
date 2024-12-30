@@ -3,30 +3,45 @@ import { Card, Col, Container, Row, Form } from "react-bootstrap";
 
 function InicioIntermedio(props) {
   const [resultado, setResultado] = useState("");
-  const [saldo, setSaldo] = useState(props.saldo);
+  const [saldo, setSaldo] = useState("");
 
   const GuardarSaldo = () => {
-    props.apuestaInicial("");
+    props.apuesta(saldo);
     // navigate("/"); // Redirige a la página de inicio
   };
-  const onChangeSaldo = () => {
-    setResultado("");
-  };
+  // const onChangeSaldo = () => {
+  //   setResultado("");
+  // };
 
   // const inicio = () => {};
 
   return (
     <Container>
       <Form.Label>Apuesta inicial:</Form.Label>
-      <input
-        type="text"
-        onChange={onChangeSaldo}
+      <Form.Control
+        value={saldo}
         placeholder="Ingrese un valor"
-      ></input>
-      <button onClick={GuardarSaldo} style={{ marginTop: "20px" }}>
-        {" "}
-        Comenzar
-      </button>
+        required
+        readOnly={false}
+        onChange={(event) => {
+          const inputValue = event.target.value;
+          const regex = /^[0-9/]*$/; // Expresión regular para permitir números, barras y guiones
+          if (regex.test(inputValue)) {
+            // pregunta si es que el texto ingresado está dentro de los parametros establecidos
+            setSaldo(inputValue);
+          }
+        }}
+      ></Form.Control>
+      {saldo ? (
+        <button
+          onClick={GuardarSaldo}
+          style={{ marginTop: "20px" }}
+          // disabled={!saldo}
+        >
+          {" "}
+          Comenzar
+        </button>
+      ) : null}
     </Container>
   );
 }

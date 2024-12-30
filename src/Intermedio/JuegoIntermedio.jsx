@@ -3,16 +3,17 @@ import { useNavigate } from "react-router-dom"; // Importamos el hook para naveg
 import { Card, Col, Container, Row, Form } from "react-bootstrap";
 // import Footer from "./Footer.jsx";
 
-function JuegoIntermedio() {
+function JuegoIntermedio(props) {
   const navigate = useNavigate(); // Creamos una instancia del hook
   const [carta1, setCarta1] = useState(0);
   const [carta2, setCarta2] = useState(0);
   const [resultado, setResultado] = useState("");
+  const [numeroAleatorio, setNumeroAleatorio] = useState(0);
 
   // // Efecto para reaccionar cuando `numeroAleatorio` cambia
-  // useEffect(() => {
-
-  // }, []); // Ejecuta este efecto cuando cambien estas variables
+  useEffect(() => {
+    inicio();
+  }, [props.show]); // Ejecuta este efecto cuando cambien estas variables
 
   const onChangeSaldo = () => {
     setResultado("");
@@ -35,14 +36,25 @@ function JuegoIntermedio() {
     }
   };
 
+  const aleatorio = () => {
+    const numero = Math.floor(Math.random() * 12) + 1;
+    setNumeroAleatorio(numero); // Actualiza el estado
+  };
+
   return (
-    <Container>
-      <Form.Label>Apuesta inicial:</Form.Label>
+    <Container className="" style={{ padding: "20px" }}>
+      {/* <Form.Label>Apuesta inicial:</Form.Label>
       <input
         type="text"
         onChange={onChangeSaldo}
         placeholder="Ingrese un valor"
-      ></input>
+      ></input> */}
+
+      {/* <button onClick={aleatorio}> aleatorio</button>  */}
+      <Row>
+        {carta1} {carta2}
+      </Row>
+      {/* {numeroAleatorio} */}
     </Container>
   );
 }
